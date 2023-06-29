@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="library-testdata-1" author="alexey.iyunski@gmail.com" context="testdata">
+        <insert tableName="author">
+            <column name="id" value="1"/>
+            <column name="first_name" value="George"/>
+            <column name="last_name" value="Orwell"/>
+            <column name="date_of_birth" value="1903/06/25"/>
+            <column name="country" value="England"/>
+        </insert>
+        <insert tableName="author">
+            <column name="id" value="2"/>
+            <column name="first_name" value="Isaac"/>
+            <column name="last_name" value="Asimov"/>
+            <column name="date_of_birth" value="1920/01/02"/>
+            <column name="country" value="USA"/>
+        </insert>
+        <insert tableName="author">
+            <column name="id" value="3"/>
+            <column name="first_name" value="Arthur"/>
+            <column name="last_name" value="Conan Doyle"/>
+            <column name="date_of_birth" value="1859/05/22"/>
+            <column name="country" value="England"/>
+        </insert>
+        <insert tableName="book">
+            <column name="author_id" value="1"/>
+            <column name="title" value="1984"/>
+            <column name="genre" value="Anti-utopia Novel"/>
+            <column name="year_of_publication" value="1949"/>
+            <column name="number_of_pages" value="328"/>
+            <column name="isbn" value="9780452284234"/>
+        </insert>
+        <insert tableName="book">
+            <column name="author_id" value="1"/>
+            <column name="title" value="Animal Farm"/>
+            <column name="genre" value="Satirical Novella"/>
+            <column name="year_of_publication" value="1945"/>
+            <column name="number_of_pages" value="112"/>
+            <column name="isbn" value="9780451526342"/>
+        </insert>
+        <insert tableName="book">
+            <column name="author_id" value="1"/>
+            <column name="title" value="The Road to Wigan Pier"/>
+            <column name="genre" value="Autobiography"/>
+            <column name="year_of_publication" value="1937"/>
+            <column name="number_of_pages" value="256"/>
+            <column name="isbn" value="9780141185293"/>
+        </insert>
+        <insert tableName="book">
+            <column name="author_id" value="2"/>
+            <column name="title" value="Foundation"/>
+            <column name="genre" value="Science Fiction"/>
+            <column name="year_of_publication" value="1951"/>
+            <column name="number_of_pages" value="256"/>
+            <column name="isbn" value="9780553293355"/>
+        </insert>
+        <insert tableName="book">
+            <column name="author_id" value="2"/>
+            <column name="title" value="I, Robot"/>
+            <column name="genre" value="Science Fiction Novels"/>
+            <column name="year_of_publication" value="1950"/>
+            <column name="number_of_pages" value="272"/>
+            <column name="isbn" value="9780553294383"/>
+        </insert>
+        <insert tableName="book">
+            <column name="author_id" value="2"/>
+            <column name="title" value="Foundation and Empire"/>
+            <column name="genre" value="Science Fiction"/>
+            <column name="year_of_publication" value="1952"/>
+            <column name="number_of_pages" value="256"/>
+            <column name="isbn" value="9780553293379"/>
+        </insert>
+        <insert tableName="book">
+            <column name="author_id" value="3"/>
+            <column name="title" value="A Study in Scarlet"/>
+            <column name="genre" value="Detective"/>
+            <column name="year_of_publication" value="1887"/>
+            <column name="number_of_pages" value="123"/>
+            <column name="isbn" value="9780140439083"/>
+        </insert>
+        <insert tableName="book">
+            <column name="author_id" value="3"/>
+            <column name="title" value="The Hound of the Baskervilles"/>
+            <column name="genre" value="Detective"/>
+            <column name="year_of_publication" value="1901"/>
+            <column name="number_of_pages" value="256"/>
+            <column name="isbn" value="9780140437867"/>
+        </insert>
+        <insert tableName="book">
+            <column name="author_id" value="3"/>
+            <column name="title" value="The Adventures of Sherlock Holmes"/>
+            <column name="genre" value="Detective novels"/>
+            <column name="year_of_publication" value="1892"/>
+            <column name="number_of_pages" value="307"/>
+            <column name="isbn" value="9780140437713"/>
+        </insert>
+        <insert tableName="book">
+            <column name="author_id" value="3"/>
+            <column name="title" value="The Lost World"/>
+            <column name="genre" value="Science Fiction"/>
+            <column name="year_of_publication" value="1912"/>
+            <column name="number_of_pages" value="272"/>
+            <column name="isbn" value="9780140431704"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
