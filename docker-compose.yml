@@ -1,21 +1,30 @@
-version: '1.0'
+version: '3.8'
 services:
   app:
     build: .
     image: app-library-api-1.0.0
     container_name: app
     environment:
-      DATABASE_URL: jdbc:mysql://db:3306/profiler-db
-      DATABASE_PASSWORD: 1234
-      DATABASE_USERNAME: root
-      SPRING_PROFILES_ACTIVE: DEV
+      SPRING_APPLICATION_JSON: '{
+        "DATABASE_URL" : "jdbc:mysql://db:3306/chief?createDatabaseIfNotExist=true",
+        "DATABASE_PASSWORD" : "1234",
+        "DATABASE_USERNAME" : "root",
+        "LIQUIBASE_CONTEXTS" : "init, testdata",
+        "spring.profiles.active" : "dev",
+        "spring.liquibase.password" : "1234"
+      }'
     ports:
       - "8080:8080"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
   db:
-    image: mysql:8
+    image: mysql:8.0.33-oracle
     restart: always
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
     environment:
       MYSQL_DATABASE: chief
       MYSQL_ROOT_PASSWORD: '1234'
